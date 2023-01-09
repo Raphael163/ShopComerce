@@ -1,0 +1,85 @@
+
+{% load static %}
+{# Импорт  headers #}
+{#-------------------------------------------------------------------------------------------#}
+
+	<nav class="navbar navbar-expand-lg navbar-light">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">E-ELect</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0 top-menu">
+					<li class="nav-item">
+						<a class="nav-link" href="#">Главная</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Инструменты</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Товары</a>
+					</li>
+				</ul>
+
+				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"><i class="far fa-user"></i></a>
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<li><a class="dropdown-item" href="#">Регистрация</a></li>
+							<li><a class="dropdown-item" href="#">Авторизация</a></li>
+						</ul>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modal-cart">
+							<i class="fas fa-shopping-cart"></i>
+						</a>
+						<div class="modal fade" id="modal-cart" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+							<div class="modal-dialog modal-xl">
+								<div class="modal-content">
+									<div class="modal-header bg-secondary text-white">
+										<h5 class="modal-title" id="exampleModalLabel">Корзина</h5>
+										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+									</div>
+									<div class="modal-body">
+										<table class="table">
+											<tbody>
+												<tr>
+													<td><img src="img/products/apple_cinema_30.jpg" alt=""></td>
+													<td><a href="#">Apple Cinema 30"</a></td>
+													<td>$230.99</td>
+													<td>1</td>
+												</tr>
+												<tr>
+													<td><img src="img/products/canon_eos_5d_1.jpg" alt=""></td>
+													<td><a href="#">Canon EOS 5D</a></td>
+													<td>$230.99</td>
+													<td>1</td>
+												</tr>
+												<tr>
+													<td><img src="img/products/hp_1.jpg" alt=""></td>
+													<td><a href="#">HP</a></td>
+													<td>$230.99</td>
+													<td>1</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+										<button type="button" class="btn btn-primary">Save changes</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="#"><i class="fas fa-search"></i></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+{#-------------------------------------------------------------------------------------------#}
