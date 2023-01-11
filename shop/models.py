@@ -32,12 +32,14 @@ class TypeProduct(models.Model):
 
 class Product(models.Model):
     """Описание продукта """
-    name = models.CharField('Заголовок', max_length=100)
-    description = models.TextField('Описание')
-    image = models.ImageField('Постер', upload_to='shop/')
+    name = models.CharField('Название', max_length=100)
+    description_config = models.TextField('конфигурация')
+    description_model = models.TextField('Описание модели')
+    image = models.ImageField('Фото', upload_to='shop/')
+    price = models.PositiveIntegerField('Прайс', default=0, help_text="Указывать в рублях")
     release_year = models.PositiveIntegerField('Дата выхода', default=2022)
     country = models.CharField('Страна производитель', max_length=30)
-    type_product = models.ManyToManyField(TypeProduct, verbose_name='Тип продуктов', related_name="type_product")
+    type_product = models.ManyToManyField(TypeProduct, verbose_name='Тип продукта', related_name="type_product")
     category = models.ForeignKey(Category, verbose_name='Категория', on_delete=models.SET_NULL, null=True)
     url = models.SlugField(max_length=160, unique=True)
     draft = models.BooleanField('Черновик', default=False)
@@ -46,8 +48,8 @@ class Product(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = 'Фильм'
-        verbose_name_plural = 'фильмы'
+        verbose_name = 'Продукт'
+        verbose_name_plural = 'Продукты'
 
 
 class ImageProduct(models.Model):
@@ -55,7 +57,7 @@ class ImageProduct(models.Model):
     name = models.CharField('Заголовок', max_length=100)
     descriptions = models.TextField('Описание')
     image = models.ImageField('Изображение', upload_to='movie_shots/')
-    movie = models.ForeignKey(Product, verbose_name='фильм', on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, verbose_name='Продукт', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
@@ -63,3 +65,4 @@ class ImageProduct(models.Model):
     class Meta:
         verbose_name = 'Подробные фото'
         verbose_name_plural = 'Подробные фотографии'
+
